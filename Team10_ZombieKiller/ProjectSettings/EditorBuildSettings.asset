@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Suyogya_workScene.unity
+    guid: 1c04df1ecb6166a4ebd1a2f44ee7b224
   m_configObjects: {}
