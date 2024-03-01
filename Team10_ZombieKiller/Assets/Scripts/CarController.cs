@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public Rigidbody RB;
+    private Rigidbody RB;
     public GameObject bus_body_art;
 
     public Transform Wheel1;
@@ -29,20 +29,20 @@ public class CarController : MonoBehaviour
         if (Input.GetKey("w")) {
             RB.velocity += transform.forward * 150 * Time.deltaTime;
 
-            Wheel1.Rotate(0, 0, -500 * Time.deltaTime);
-            Wheel2.Rotate(0, 0, -500 * Time.deltaTime);
-            Wheel3.Rotate(0, 0, 500 * Time.deltaTime);
-            Wheel4.Rotate(0, 0, 500 * Time.deltaTime);
+            Wheel1.Rotate(-500, 0, 0 * Time.deltaTime);
+            Wheel2.Rotate(-500, 0, 0 * Time.deltaTime);
+            Wheel3.Rotate(500, 0,0 * Time.deltaTime);
+            Wheel4.Rotate(500, 0,0 * Time.deltaTime);
 
         }
 
         if (Input.GetKey("s")) {
             RB.velocity -= transform.forward * 80 * Time.deltaTime;
 
-            Wheel1.Rotate(0, 0, 500 * Time.deltaTime);
-            Wheel2.Rotate(0, 0, 500 * Time.deltaTime);
-            Wheel3.Rotate(0, 0, -500 * Time.deltaTime);
-            Wheel4.Rotate(0, 0, -500 * Time.deltaTime);
+            Wheel1.Rotate(500,0, 0* Time.deltaTime);
+            Wheel2.Rotate(500,0, 0* Time.deltaTime);
+            Wheel3.Rotate(-500, 0, 0 * Time.deltaTime);
+            Wheel4.Rotate(-500, 0,  0* Time.deltaTime);
 
         }
 
