@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour{ 
 
-        public static int playerStat1; 
-        // public GameObject textGameObject; 
+        public static int ZombiesKilled; 
+        public GameObject ZokbiesKilled_text; 
 
-        // void Start () { UpdateScore (); } 
+        void Start () { 
+                UpdateScore (); 
+                } 
 
         void Update(){         //delete this quit functionality when a Pause Menu is added!
                 if (Input.GetKey("escape")){
@@ -22,12 +24,18 @@ public class GameHandler : MonoBehaviour{
                 //}
         } 
 
-        // void UpdateScore () { 
-        //        Text scoreTemp = textGameObject.GetComponent<Text>(); 
-        //        scoreTemp.text = "Score: " + score; } 
+        public void AddToScore(int score){
+             ZombiesKilled += score;
+             UpdateScore();   
+        }
+
+        void UpdateScore () { 
+                Text scoreTemp = ZokbiesKilled_text.GetComponent<Text>(); 
+                scoreTemp.text = "Zombies Killed: " + ZombiesKilled; 
+                } 
 
         public void StartGame(){
-                SceneManager.LoadScene("Scene1");
+                SceneManager.LoadScene("Level1");
         }
 
         public void OpenCredits(){
