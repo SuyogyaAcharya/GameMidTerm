@@ -64,13 +64,13 @@ public class CarController : MonoBehaviour
         if (Input.GetKey("s") && Input.GetKey("d")) {
             transform.Rotate(0, -30 * Time.deltaTime, 0);
             bus_body_art.transform.rotation = Quaternion.Lerp(bus_body_art.transform.rotation, Left.rotation, 4 * Time.deltaTime);
-            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; // Move backwards
+            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; 
         }
 
         if (Input.GetKey("s") && Input.GetKey("a")) {
             transform.Rotate(0, 30 * Time.deltaTime, 0);
             bus_body_art.transform.rotation = Quaternion.Lerp(bus_body_art.transform.rotation, Right.rotation, 4 * Time.deltaTime);
-            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; // Move backwards
+            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; 
         }
 
 
