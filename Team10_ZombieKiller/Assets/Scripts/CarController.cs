@@ -61,6 +61,19 @@ public class CarController : MonoBehaviour
             RB.velocity -= transform.forward * 110 * Time.deltaTime;
         }
 
+        if (Input.GetKey("s") && Input.GetKey("d")) {
+            transform.Rotate(0, -30 * Time.deltaTime, 0);
+            bus_body_art.transform.rotation = Quaternion.Lerp(bus_body_art.transform.rotation, Left.rotation, 4 * Time.deltaTime);
+            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; // Move backwards
+        }
+
+        if (Input.GetKey("s") && Input.GetKey("a")) {
+            transform.Rotate(0, 30 * Time.deltaTime, 0);
+            bus_body_art.transform.rotation = Quaternion.Lerp(bus_body_art.transform.rotation, Right.rotation, 4 * Time.deltaTime);
+            RB.velocity -= bus_body_art.transform.forward * 80 * Time.deltaTime; // Move backwards
+        }
+
+
         if (!Input.GetKey("d") && !Input.GetKey("a")) {
             bus_body_art.transform.rotation = Quaternion.Lerp(bus_body_art.transform.rotation, Straight.rotation, 4 * Time.deltaTime);
 
