@@ -8,10 +8,14 @@ public class GameHandler : MonoBehaviour{
 
         public static int ZombiesKilled; 
         public GameObject ZokbiesKilled_text; 
+        public Text FinalScore;
+        public Text FinalTime; 
+        private float startTime;
 
         void Start () { 
-                UpdateScore (); 
-                } 
+                UpdateScore ();
+                startTime = Time.time; 
+        } 
 
         void Update(){         //delete this quit functionality when a Pause Menu is added!
                 if (Input.GetKey("escape")){
@@ -32,7 +36,17 @@ public class GameHandler : MonoBehaviour{
         void UpdateScore () { 
                 Text scoreTemp = ZokbiesKilled_text.GetComponent<Text>(); 
                 scoreTemp.text = "Zombies Killed: " + ZombiesKilled; 
-                } 
+
+                if (SceneManager.GetActiveScene().name == "Win_Scene") {
+                        FinalScore.text = "FINAL Zombies Killed: " + ZombiesKilled;
+                        // Calculate the final time
+                        float finalTime = Time.time - startTime;
+                        // Format the final time
+                        string minutes = ((int)finalTime / 60).ToString("00");
+                        string seconds = (finalTime % 60).ToString("00.00");
+                        FinalTime.text = "Final Time: " + minutes + ":" + seconds;
+                }
+        } 
 
         public void StartGame(){
                 SceneManager.LoadScene("Level1");
