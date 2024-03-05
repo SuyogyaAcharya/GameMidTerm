@@ -67,4 +67,17 @@ public class GameHandler : MonoBehaviour{
                 Application.Quit(); 
                 #endif 
         }
+        
+        void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("FinishWall")) 
+        {
+            LoadNextScene(); 
+        }
+        }
+
+        void LoadNextScene() {
+                // Load the next scene here
+                // For example:
+                SceneManager.LoadScene("Level2");
+        }
 }

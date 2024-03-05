@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraFocus
   - GameHandler
+  - FinishWall
   layers:
   - Default
   - TransparentFX
