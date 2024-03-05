@@ -76,8 +76,6 @@ public class GameHandler : MonoBehaviour{
         }
 
         void LoadNextScene() {
-                // Load the next scene here
-                // For example:
                 SceneManager.LoadScene("Level2");
         }
 }
