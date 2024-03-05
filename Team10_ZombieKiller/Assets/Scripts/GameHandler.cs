@@ -45,11 +45,13 @@ public class GameHandler : MonoBehaviour{
                         string minutes = ((int)finalTime / 60).ToString("00");
                         string seconds = (finalTime % 60).ToString("00.00");
                         FinalTime.text = "Final Time: " + minutes + ":" + seconds;
+                        ZombiesKilled = 0;
                 }
         } 
 
         public void StartGame(){
                 SceneManager.LoadScene("Tutorial");
+                ZombiesKilled = 0;
         }
 
         public void OpenCredits(){
